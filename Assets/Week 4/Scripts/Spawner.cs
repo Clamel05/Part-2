@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
         if(loadingTimer > 0 && loadingTimer < 6) {
 
             transform.position = new Vector3(Random.Range(-10, 10), Random.Range(-5, 5), 0);
-            transform.rotation = Quaternion.identity(0,0,Random.Range(-5, 5));
+            
         }
            
     }
