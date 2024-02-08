@@ -7,7 +7,6 @@ public class Weapon : MonoBehaviour
 
     Rigidbody2D rb;
     public float speed = 3;
-    public GameObject knight;
     float timer = 0;
     public float maxTime = 5;
 
@@ -35,7 +34,7 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        knight.SendMessage("TakeDamage", 1);
+        collision.SendMessage("TakeDamage", 1);
         Destroy(gameObject);
     }
 
