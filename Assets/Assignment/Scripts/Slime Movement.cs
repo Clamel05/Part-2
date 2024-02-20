@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SlimeMovement : MonoBehaviour
 {
@@ -14,9 +15,10 @@ public class SlimeMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        endPos = transform.position;
     }
 
-
+     
     private void FixedUpdate()
     {
         Mover = endPos - (Vector2)transform.position;
