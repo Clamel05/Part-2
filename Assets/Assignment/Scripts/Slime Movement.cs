@@ -8,7 +8,7 @@ public class SlimeMovement : MonoBehaviour
     Rigidbody2D rb;
     Vector2 Mover;
     Vector2 endPos;
-    public float speed = 3;
+    public float speed = 2;
     Animator animator;
     public GameObject player;
 

@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     Vector2 Mover;
     Vector2 endPos;
-    public float speed = 5;
+    public float speed = 6;
     Animator animator;
     public GameObject NextSceneZone;
     public GameObject NextSceneText;
