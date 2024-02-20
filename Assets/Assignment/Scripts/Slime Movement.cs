@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class SlimeMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     Vector2 Mover;
     Vector2 endPos;
-    public float speed = 5;
+    public float speed = 3;
     Animator animator;
 
     void Start()
@@ -27,10 +27,10 @@ public class PlayerMovement : MonoBehaviour
 
         rb.MovePosition(rb.position + Mover.normalized * speed * Time.deltaTime);
 
-        animator.SetFloat ("Speed", Mover.magnitude);
-
-
+        animator.SetFloat("Movement", Mover.magnitude);
     }
+
+
 
 
     void Update()
@@ -39,8 +39,5 @@ public class PlayerMovement : MonoBehaviour
         {
             endPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
-
-
-
     }
 }
