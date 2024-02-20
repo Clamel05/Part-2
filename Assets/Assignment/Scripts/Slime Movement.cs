@@ -10,6 +10,7 @@ public class SlimeMovement : MonoBehaviour
     Vector2 endPos;
     public float speed = 3;
     Animator animator;
+    public GameObject player;
 
     void Start()
     {
@@ -34,7 +35,6 @@ public class SlimeMovement : MonoBehaviour
 
 
 
-
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -42,4 +42,17 @@ public class SlimeMovement : MonoBehaviour
             endPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
     }
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        player.SendMessage("Death");
+        player.SendMessage("Death2");
+
+        animator.SetTrigger("Attack");
+
+    }
+
+
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     Vector2 endPos;
     public float speed = 5;
     Animator animator;
+    public GameObject NextSceneZone;
+    public GameObject NextSceneText;
 
     void Start()
     {
@@ -46,11 +49,17 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Death()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = (currentSceneIndex + 1) % SceneManager.sceneCountInBuildSettings;
-        SceneManager.LoadScene(nextSceneIndex);
+        animator.SetTrigger("Death");//Sets the initial death animation
+
+        Destroy(NextSceneZone.gameObject);
+        Destroy(NextSceneText.gameObject);
+    }
+
+    public void Death2()
+    {
+            animator.SetTrigger("Death2");//Sets the animation to keep the player lying on the ground
     }
 
 
