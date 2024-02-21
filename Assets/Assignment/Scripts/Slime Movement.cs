@@ -11,7 +11,6 @@ public class SlimeMovement : MonoBehaviour
     public float speed = 2;
     Animator animator;
     public GameObject player;
-    //public float LerpMover = 5;
     float LerpTimer = 0;
     public AnimationCurve Movement;
     public float interpolation;
@@ -42,7 +41,7 @@ public class SlimeMovement : MonoBehaviour
         LerpTimer += 0.01f * Time.deltaTime;
 
 
-        //transform.position = Vector3.Lerp(transform.position, endPos, LerpMover);
+
 
         animator.SetFloat("Movement", Mover.magnitude);
     }
