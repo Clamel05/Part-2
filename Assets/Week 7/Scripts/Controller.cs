@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
@@ -10,6 +11,7 @@ public class Controller : MonoBehaviour
     public float maxCharge = 1;
     public float minCharge = 1;
     Vector2 direction;
+    public static float score = 0;
 
 
 
@@ -41,6 +43,11 @@ public class Controller : MonoBehaviour
 
     private void Update()
     {
+        
+
+
+
+
         if (SelectedPlayer == null) return;
 
         if (Input.GetKeyDown(KeyCode.Space))
