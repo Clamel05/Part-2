@@ -11,7 +11,6 @@ public class SceneRestart : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         
-        //int nextSceneIndex = (currentSceneIndex + 1) % SceneManager.sceneCountInBuildSettings;
-        //SceneManager.LoadScene(nextSceneIndex);
+
     }
 }
