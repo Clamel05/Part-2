@@ -162,8 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6f114e34abfd642bfd561841db1cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedColour: {r: 0.15806337, g: 0.86380905, b: 0.9056604, a: 1}
+  selectedColour: {r: 0.6603774, g: 0.09033466, b: 0.09033466, a: 1}
   unselectedColour: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
+  speed: 50
 --- !u!1 &6444032165869182989
 GameObject:
   m_ObjectHideFlags: 0
