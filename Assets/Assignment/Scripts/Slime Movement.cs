@@ -11,6 +11,10 @@ public class SlimeMovement : MonoBehaviour
     public float speed = 2;
     Animator animator;
     public GameObject player;
+    //public float LerpMover = 5;
+    float LerpTimer = 0;
+    public AnimationCurve Movement;
+    public float interpolation;
 
     void Start()
     {
@@ -23,12 +27,22 @@ public class SlimeMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Mover = endPos - (Vector2)transform.position;
+
+
+
         if (Mover.magnitude < 0.1)
         {
             Mover = Vector2.zero;
         }
 
         rb.MovePosition(rb.position + Mover.normalized * speed * Time.deltaTime);
+
+        interpolation = Movement.Evaluate(LerpTimer);
+        transform.position = Vector3.Lerp(transform.position, endPos, interpolation);
+        LerpTimer += 0.01f * Time.deltaTime;
+
+
+        //transform.position = Vector3.Lerp(transform.position, endPos, LerpMover);
 
         animator.SetFloat("Movement", Mover.magnitude);
     }
@@ -40,6 +54,7 @@ public class SlimeMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             endPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            LerpTimer = 0.001f;
         }
     }
 
